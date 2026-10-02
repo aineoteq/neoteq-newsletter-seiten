@@ -60,7 +60,7 @@ Mobil gilt `hyphens: auto` für `main`.
 - Block mit Aufruf `.mask_text_teaser` („GET IN TOUCH“ auf /de/mission): Dachzeile, `.h1`, Button, linksbündig.
   Abstand zum Button 33 px (mobil 28 px).
 - **Newsletter-Seiten:** Seitenkopf wie /de/mission, danach wie im Teaser ein kurzer Satz im Fließtext (36/42 px, mobil 21/28 px), der Button
-  und ein Hinweis in `.text-body2` (16/24 px).
+  und ein Hinweis, ebenfalls im Fließtext (36/42 px). Nur der Button ist 16 px, wie überall auf neoteq.de.
 
 ## Rundungen
 
