@@ -1,193 +1,196 @@
-/* neoteq Newsletter-Seiten – Stil angelehnt an neoteq.de und die neoteq-Mails */
+/* neoteq Newsletter-Seiten
+   Werte 1:1 aus https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Css/app.css
+   (Stand 2026-10-02), Herkunft und Abweichungen in DESIGN.md. */
 
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("fonts/Poppins-Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("fonts/Poppins-Black.woff2") format("woff2");
-}
+/* Schrift: dieselben Dateien wie neoteq.de, direkt von dort geladen (CORS erlaubt).
+   Wie dort: Gewicht 400 und 500 nutzen beide die Medium-Datei. */
+@font-face { font-display: swap; font-family: Poppins; font-style: normal; font-weight: 900;
+  src: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Fonts/NTQ-Poppins-Black.woff2) format("woff2"); }
+@font-face { font-display: swap; font-family: Poppins; font-style: normal; font-weight: 500;
+  src: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Fonts/NTQ-Poppins-Medium.woff2) format("woff2"); }
+@font-face { font-display: swap; font-family: Poppins; font-style: normal; font-weight: 400;
+  src: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Fonts/NTQ-Poppins-Medium.woff2) format("woff2"); }
 
 :root {
-  --petrol: #0d3b3e;
-  --tuerkis: #3ddbd0;
-  --petrol-hell: #eef3f3;
-  --text: #343a40;
-  --text-leise: #5b6670;
-  --weiss: #ffffff;
-  --fehler: #b3261e;
+  --grau: #343a40;      /* Text, Logo, Buttons (Desktop) */
+  --petrol: #0f3737;    /* Footer-Box, Mobil-Hintergrund */
+  --tuerkis: #2aced1;   /* Footer-Links, Mobil-Text, Hover */
+  --hellgrau: #f0f0f0;  /* Menü-Overlay-Tönung */
+  --weiss: #fff;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+/* Reset wie Tailwind-Preflight auf neoteq.de */
+*, ::after, ::before { border: 0 solid; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; line-height: 1.5; }
+body { margin: 0; color: var(--grau); background: var(--weiss); font-family: Poppins; font-size: 36px; line-height: 42px; }
+h1, h2, p, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: inherit; }
+button { font: inherit; color: inherit; background: transparent; padding: 0; margin: 0; cursor: pointer; text-transform: none; }
+img { display: block; max-width: 100%; height: auto; }
+::selection { background: var(--petrol); color: var(--tuerkis); }
 
-html { -webkit-text-size-adjust: 100%; }
+/* Raster */
+.container {
+  display: grid; gap: 33px; grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%; margin: 0 auto 10rem; padding-left: 33px; padding-right: 33px;
+}
+.col-span-12 { grid-column: span 12 / span 12; }
+@media (min-width: 1366px) { .container { max-width: 1366px; } }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  background: var(--petrol-hell);
-  color: var(--text);
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 1.6;
+/* Header */
+header { background-color: var(--weiss); position: fixed; top: 0; width: 100%; z-index: 9999; }
+header .container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0; padding: 25px 33px; }
+#logo { display: block; }
+.logo_mask {
+  background-color: var(--grau);
+  -webkit-mask: url(logo.svg) no-repeat 0 0 / 100%; mask: url(logo.svg) no-repeat 0 0 / 100%;
 }
+.logo_mask img { opacity: 0; max-width: 130px; }
+.kopf-rechts { display: flex; align-items: center; }
 
-a { color: inherit; }
+/* Buttons */
+.btn {
+  display: block; width: fit-content; border: 1px solid; border-radius: 24px; color: var(--grau);
+  font-size: 16px; font-weight: 500; line-height: 24px; padding: 11px 16px; text-transform: uppercase;
+}
+header .container .btn { padding: 10px 16px; }
+.btn.upload, .btn.arrow { position: relative; transition: all .3s ease; }
+.btn.upload::before, .btn.arrow::before {
+  content: ""; position: absolute; left: 16px; width: 0; overflow: hidden; background-color: currentColor;
+}
+.btn.upload::before {
+  height: 24px; top: 10px;
+  -webkit-mask: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/upload.svg); mask: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/upload.svg);
+}
+.btn.arrow::before {
+  height: 16px; top: 15px;
+  -webkit-mask: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/arrow.svg); mask: url(https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/arrow.svg);
+}
+.btn.upload:hover { padding-left: 58px; }
+.btn.upload:hover::before { width: 32px; }
+.btn.arrow:hover, .btn.arrow:focus-visible { padding-left: 48px; }
+.btn.arrow:hover::before, .btn.arrow:focus-visible::before { width: 24px; }
+/* Hover-Farbe wie .hover-active.hover-color-one auf neoteq.de */
+.btn:hover, .btn:focus-visible { color: var(--tuerkis); }
+.btn:focus-visible, .nav_trigger:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.btn:disabled { cursor: progress; opacity: .6; }
 
-/* Kopf */
-.kopf {
-  background: var(--petrol);
-  padding: 20px 16px;
-}
-.kopf-innen {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.logo { display: block; line-height: 0; }
-.logo img { height: 40px; width: auto; }
-.sprache {
-  color: var(--weiss);
-  font-size: 14px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, .5);
-  border-radius: 24px;
-  padding: 4px 14px;
-}
-.sprache:hover, .sprache:focus-visible { border-color: var(--tuerkis); color: var(--tuerkis); }
+/* Sprachumschalter (#language_menu), aktive Sprache ist wie dort ausgeblendet */
+#language_menu { margin-left: 15px; }
 
-/* Inhalt */
-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 16px;
+/* Menü-Knopf */
+.nav_trigger {
+  position: relative; z-index: 9; display: block; width: 85px; height: 40px; margin-left: 15px;
+  border: 1px solid; border-radius: 20px; color: var(--grau); padding: 11px 16px;
 }
-.karte {
-  width: 100%;
-  max-width: 560px;
-  background: var(--weiss);
-  border-radius: 8px;
-  border-top: 6px solid var(--tuerkis);
-  padding: 40px;
-  box-shadow: 0 1px 2px rgba(13, 59, 62, .06), 0 8px 24px rgba(13, 59, 62, .08);
+.nav_trigger span {
+  position: absolute; left: 50%; width: 24px; height: 1px; background-color: currentColor;
+  transform: translate(-50%, -50%); transition: all .3s ease;
 }
-.dachzeile {
-  margin: 0 0 8px;
-  color: var(--petrol);
-  font-size: 13px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-h1 {
-  margin: 0 0 16px;
-  color: var(--petrol);
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 1.05;
-  letter-spacing: -.01em;
-  text-transform: uppercase;
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-.karte p { margin: 0 0 16px; }
-.karte p:last-child { margin-bottom: 0; }
-.leise { color: var(--text-leise); font-size: 15px; }
-.btn + .leise, noscript + .leise { margin-top: 24px; }
+.nav_trigger span:first-child { top: 40%; }
+.nav_trigger span:last-child { top: 60%; }
+.nav_active .nav_trigger { background-color: var(--grau); border-color: var(--grau); }
+.nav_active .nav_trigger span { background-color: var(--weiss); top: 50%; transform-origin: top left; }
+.nav_active .nav_trigger span:first-child { transform: rotate(45deg) translate(-50%, -50%); }
+.nav_active .nav_trigger span:last-child { transform: rotate(-45deg) translate(-50%, -50%); }
 
-.zustand[hidden] { display: none; }
+/* Menü-Overlay */
+.nav_content {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100dvh; color: var(--grau);
+  -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); background-color: hsla(0, 0%, 94%, .25);
+  transform: translateY(-100vh); transition: transform .3s ease, visibility .3s; visibility: hidden;
+}
+.nav_active .nav_content { transform: translateY(0); visibility: visible; }
+.nav_content .container {
+  display: flex; flex-direction: column; justify-content: space-between; align-items: unset; height: 100dvh;
+  margin-bottom: 0; padding: 10px 33px 40px;
+}
+.nav_content .btn.nur-mobil { display: none; }
+.text-nav { font-size: 60px; font-weight: 900; line-height: 90px; text-transform: uppercase; transition: all .3s ease; }
+.main_nav li a:hover { margin-left: 50px; }
+.nav_content_inner { display: flex; flex-direction: column; }
+.headerVideo_logos { display: flex; gap: 30px; justify-content: space-between; margin-bottom: 70px; }
+.headerVideo_logos .flex { display: flex; gap: 2rem; }
+.headerVideo_logos .h-14 { height: 3.5rem; }
+.nav_content_bottom { display: flex; align-items: end; justify-content: space-between; }
+.nav_content_navigation { font-size: 16px; line-height: 24px; }
+.nav_content_navigation li { display: inline-block; margin-right: 29px; }
+.nav_socialMediaIcons { display: flex; gap: 7px; }
+.nav_socialMediaIcons img { width: 36px; }
+
+/* Inhalt wie .mask_text / .bodytext auf den Unterseiten von neoteq.de */
+main { margin-top: 200px; }
+.bodytext { margin-top: 160px; padding-left: 33%; }
+.dachzeile { display: block; margin-bottom: 35px; font-size: 30px; font-weight: 400; line-height: 45px; text-transform: uppercase; }
+h1 { font-size: 36px; font-weight: 900; letter-spacing: -.4px; line-height: 33px; margin-bottom: 25px; text-transform: uppercase; }
+.bodytext p + p { margin-top: 42px; }
+.bodytext .btn { margin-top: 33px; }
+.bodytext .leise { margin-top: 33px; font-size: 16px; line-height: 24px; }
 .zustand:focus { outline: none; }
 
-/* Button im Stil der neoteq.de-Pills, mit Pfeil beim Hover */
-.btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;
-  min-height: 48px;
-  padding: 12px 28px;
-  border: 0;
-  border-radius: 24px;
-  background: var(--tuerkis);
-  color: var(--petrol);
-  font: inherit;
-  font-size: 16px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: padding .3s ease, background-color .2s ease;
+/* Footer, ohne den Newsletter-iFrame von neoteq.de (Drittanbieter) */
+footer .container {
+  background-color: var(--petrol); border-radius: 16px; color: var(--tuerkis); margin-bottom: 30px; padding: 30px;
 }
-.btn::before {
-  content: "";
-  position: absolute;
-  left: 22px;
-  top: 50%;
-  width: 0;
-  height: 16px;
-  transform: translateY(-50%);
-  background: url("arrow.svg") left center / 24px 16px no-repeat;
-  overflow: hidden;
-  transition: width .3s ease;
-}
-.btn:hover:not(:disabled), .btn:focus-visible { padding-left: 58px; }
-.btn:hover:not(:disabled)::before, .btn:focus-visible::before { width: 24px; }
-.btn:focus-visible { outline: 3px solid var(--petrol); outline-offset: 3px; }
-.btn:disabled { cursor: progress; opacity: .7; }
+footer .col-span-12 { display: flex; align-items: center; justify-content: space-between; }
+.footer_navigation li { display: inline-block; margin-right: 29px; }
+.footer_navigation a { font-size: 16px; font-weight: 700; line-height: 24px; text-transform: uppercase; }
+.footer_navigation a:hover { text-decoration: underline; }
+.footer_socialmedia { display: flex; gap: 7px; }
+.footer_socialmedia img { max-width: none; }  /* natürliche Größe der SVGs wie auf neoteq.de */
 
-.btn-zweit {
-  background: transparent;
-  border: 1px solid var(--petrol);
+@media (max-width: 1200px) {
+  h1 { margin-bottom: 22px; }
+  .bodytext { margin-top: 80px; padding-left: 0; }
+  footer { margin: 0 20px; padding-bottom: 20px; }
 }
 
-.hinweis-fehler { color: var(--fehler); }
+/* Mobil: neoteq.de wählt dort zufällig Petrol/Türkis oder Braun/Orange.
+   Wir nehmen fest Petrol/Türkis (.hover-color-one). */
+@media (max-width: 786px) {
+  body { background-color: var(--petrol); color: var(--tuerkis); font-size: 21px; line-height: 28px; }
+  .container { gap: 10px; margin-bottom: 5rem; padding-left: 22px; padding-right: 22px; }
+  header { background-color: var(--petrol); }
+  header .container { padding: 25px 22px; }
+  header .container .btn.upload { display: none; }
+  .logo_mask { background-color: var(--tuerkis); }
+  .logo_mask img { max-width: 92px; }
+  .btn { color: var(--tuerkis); line-height: 1; text-align: center; hyphens: none; }
+  #language_menu .btn { font-size: 12px; padding: 8px 16px; }
+  .nav_trigger { width: 63px; height: 30px; color: var(--tuerkis); }
+  .nav_active .nav_trigger { border-color: var(--tuerkis); }
+  .nav_active .nav_trigger span { background-color: var(--tuerkis); }
+  .btn.arrow { padding-left: 48px; }
+  .btn.arrow::before { width: 24px; height: 17px; top: 50%; transform: translateY(-50%); }
+  .btn.arrow:hover, .btn.arrow:focus-visible { padding-left: 48px; }
 
-/* Fuß */
-.fuss {
-  background: var(--petrol);
-  color: rgba(255, 255, 255, .8);
-  padding: 24px 16px;
-  font-size: 14px;
-}
-.fuss-innen {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 24px;
-}
-.fuss nav { display: flex; gap: 24px; }
-.fuss a { color: var(--weiss); text-decoration: none; }
-.fuss a:hover, .fuss a:focus-visible { color: var(--tuerkis); text-decoration: underline; }
+  .nav_content .container { justify-content: flex-end; padding: 10px 33px 73px; }
+  .nav_content .btn.nur-mobil { display: block; position: absolute; left: 22px; top: 22px; color: var(--grau); }
+  .text-nav { font-size: 40px; line-height: 60px; }
+  .main_nav { height: 100%; margin-top: 100px; text-align: center; }
+  .main_nav li a:hover { margin-left: 0; }
+  .headerVideo_logos { flex-direction: column; margin: 15px auto; width: 70%; }
+  .headerVideo_logos .flex { align-items: center; }
+  .nav_content_bottom { flex-direction: column; align-items: center; }
+  .nav_content_navigation { display: none; }
+  .nav_socialMediaIcons { margin-top: 30px; }
 
-@media (max-width: 520px) {
-  body { font-size: 16px; }
-  main { padding: 24px 16px; align-items: flex-start; }
-  .karte { padding: 28px 20px; }
-  h1 { font-size: 26px; }
-  .logo img { height: 32px; }
-  .btn { width: 100%; }
+  main { margin-top: 92px; hyphens: auto; }
+  h1 { font-size: 20px; letter-spacing: -.2px; line-height: 18px; }
+  .dachzeile { font-size: 21px; line-height: 31.5px; }
+  .bodytext p + p { margin-top: 28px; }
+  .bodytext .btn { margin-top: 28px; }
+  .bodytext .leise { margin-top: 28px; }
+
+  footer { margin: 0 20px; padding-bottom: 20px; }
+  footer .container { margin-bottom: 0; }
+  footer .col-span-12 { flex-direction: column; }
+  .footer_navigation ul { text-align: center; }
+  .footer_navigation li { display: block; line-height: 1; margin-right: 0; }
+  .footer_socialmedia { margin-top: 37px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn, .btn::before { transition: none; }
+  .btn, .btn::before, .nav_trigger span, .nav_content, .text-nav { transition: none; }
 }

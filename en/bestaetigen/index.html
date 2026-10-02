@@ -3,64 +3,124 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src https://www.neoteq.de; img-src 'self' https://www.neoteq.de; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
-<title>Confirm subscription · neoteq</title>
-<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="../../assets/fonts/Poppins-Black.woff2" as="font" type="font/woff2" crossorigin>
+<title>Confirm subscription: Neoteq</title>
+<link rel="icon" href="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Fonts/NTQ-Poppins-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Fonts/NTQ-Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/style.css">
 <script src="../../assets/app.js" defer></script>
 </head>
 <body>
-<header class="kopf">
-  <div class="kopf-innen">
-    <a class="logo" href="https://neoteq.de/en/"><img src="../../assets/logo-weiss.svg" alt="neoteq – home" width="131" height="61"></a>
-    <a class="sprache" href="../bestaetigen/" hreflang="de" lang="de" data-sprache>Deutsch</a>
+<header>
+  <div class="container">
+    <a id="logo" href="https://www.neoteq.de/en/">
+      <div class="logo_mask"><img src="../../assets/logo.svg" alt="neoteq ventures – home" width="130" height="61"></div>
+    </a>
+    <div class="kopf-rechts">
+      <a class="btn upload" href="https://www.neoteq.de/en/pitchdeck">Upload your Pitchdeck</a>
+      <div id="language_menu"><a class="btn" href="../../bestaetigen/" hreflang="de" lang="de" data-sprache>DE</a></div>
+      <nav aria-label="Menu">
+        <button type="button" class="nav_trigger" aria-expanded="false" aria-controls="menue" aria-label="Menu"><span></span><span></span></button>
+        <div class="nav_content" id="menue">
+          <div class="container">
+            <a class="btn nur-mobil" href="https://www.neoteq.de/en/pitchdeck">Upload Pitchdeck</a>
+            <ul class="main_nav">
+              <li><a href="https://www.neoteq.de/en/mission" class="text-nav">Mission</a></li>
+              <li><a href="https://www.neoteq.de/en/portfolio" class="text-nav">Portfolio</a></li>
+              <li><a href="https://www.neoteq.de/en/team" class="text-nav">Team</a></li>
+              <li><a href="https://neoteq.notion.site/neojobs-9f00a0fec73f4dd89166f2f126d01c3a?pvs=4" class="text-nav">NEOJOBS</a></li>
+            </ul>
+            <div class="nav_content_inner">
+              <div class="headerVideo_logos">
+                <div class="flex">
+                  <a href="https://calendly.com/c/FFCQWVOYDTTXZ4CQ?month=2023-10"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Images/FF_dark.svg" alt="Friday's Fifteen"></a>
+                  <a href="https://www.neoteq.de/en/neobib"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Images/neobib_logo_dark.svg" alt="neobib"></a>
+                  <a href="https://www.neoteq.de/en/founders-dinner"><img class="h-14" src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Images/foundersdinner_dark.svg" alt="founders dinner"></a>
+                </div>
+              </div>
+              <div class="nav_content_bottom">
+                <div class="nav_content_navigation">
+                  <ul>
+          <li><a href="https://auth.fundrbird.com/7dd2e6fe-0953-4e62-9725-ea4834524c69">Investor Login</a></li>
+          <li><a href="https://www.neoteq.de/en/investor-information">Investor information</a></li>
+          <li><a href="https://www.neoteq.de/en/privacy-policy">Privacy Policy</a></li>
+          <li><a href="https://www.neoteq.de/en/imprint">Imprint</a></li>
+                  </ul>
+                </div>
+                <div class="nav_socialMediaIcons">
+                  <a href="https://x.com/neoteqvc"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/x_dark.svg" alt="X"></a>
+                  <a href="https://www.instagram.com/neoteqvc/"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/instagram_dark.svg" alt="Instagram"></a>
+                  <a href="https://www.linkedin.com/company/neoteq-ventures/"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/linkedIn_dark.svg" alt="LinkedIn"></a>
+                  <a href="https://www.tiktok.com/@neoteqvc"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/tiktok_dark.svg" alt="TikTok"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
 <main data-aktion="bestaetigen">
-  <div class="karte">
-    <section data-zustand="start" tabindex="-1">
-      <p class="dachzeile">Newsletter</p>
-      <h1>Please confirm your subscription</h1>
-      <p>One more click and you’ll receive the neoteq newsletter.</p>
-      <button type="button" class="btn" data-ausloesen data-laeuft="One moment …">Confirm subscription</button>
-      <noscript><p class="hinweis-fehler">This page needs JavaScript. Please enable it and reload the page.</p></noscript>
-      <p class="leise">Didn’t sign up? Just close this page. We won’t send you anything without your confirmation.</p>
-    </section>
-    <section class="zustand" data-zustand="erfolg" tabindex="-1" role="status" hidden>
-      <p class="dachzeile">Newsletter</p>
-      <h1>Thanks, you’re in</h1>
-      <p>Your subscription is confirmed. You can unsubscribe at any time using the link at the end of every issue.</p>
-      <a class="btn btn-zweit" href="https://neoteq.de/en/">Go to neoteq.de</a>
-    </section>
-    <section class="zustand" data-zustand="abgelaufen" tabindex="-1" role="alert" hidden>
-      <p class="dachzeile">Newsletter</p>
-      <h1>This link has expired</h1>
-      <p>Please sign up again. You’ll then receive a new email with a fresh confirmation link.</p>
-      <a class="btn btn-zweit" href="https://neoteq.de/en/">Go to neoteq.de</a>
-    </section>
-    <section class="zustand" data-zustand="ungueltig" tabindex="-1" role="alert" hidden>
-      <p class="dachzeile">Newsletter</p>
-      <h1>This link is incomplete</h1>
-      <p>Please open the link directly from the email. If that doesn’t help, copy the full address into your browser.</p>
-    </section>
-    <section class="zustand" data-zustand="fehler" tabindex="-1" role="alert" hidden>
-      <p class="dachzeile">Newsletter</p>
-      <h1>Something went wrong</h1>
-      <p>Please try again in a few minutes.</p>
-      <button type="button" class="btn" data-nochmal>Try again</button>
-    </section>
+  <div class="container">
+    <div class="col-span-12">
+      <div class="bodytext">
+        <section data-zustand="start" tabindex="-1">
+          <span class="dachzeile">Newsletter</span>
+          <h1>Please confirm your subscription</h1>
+          <p>One more click and you’ll receive the neoteq newsletter.</p>
+          <button type="button" class="btn arrow" data-ausloesen data-laeuft="One moment …">Confirm subscription</button>
+          <noscript><p class="leise">This page needs JavaScript. Please enable it and reload the page.</p></noscript>
+          <p class="leise">Didn’t sign up? Just close this page. We won’t send you anything without your confirmation.</p>
+        </section>
+        <section class="zustand" data-zustand="erfolg" tabindex="-1" role="status" hidden>
+          <span class="dachzeile">Newsletter</span>
+          <h1>Thanks, you’re in</h1>
+          <p>Your subscription is confirmed. You can unsubscribe at any time using the link at the end of every issue.</p>
+          <a class="btn arrow" href="https://www.neoteq.de/en/">Go to neoteq.de</a>
+        </section>
+        <section class="zustand" data-zustand="abgelaufen" tabindex="-1" role="alert" hidden>
+          <span class="dachzeile">Newsletter</span>
+          <h1>This link has expired</h1>
+          <p>Please sign up again. You’ll then receive a new email with a fresh confirmation link.</p>
+          <a class="btn arrow" href="https://www.neoteq.de/en/">Go to neoteq.de</a>
+        </section>
+        <section class="zustand" data-zustand="ungueltig" tabindex="-1" role="alert" hidden>
+          <span class="dachzeile">Newsletter</span>
+          <h1>This link is incomplete</h1>
+          <p>Please open the link directly from the email. If that doesn’t help, copy the full address into your browser.</p>
+        </section>
+        <section class="zustand" data-zustand="fehler" tabindex="-1" role="alert" hidden>
+          <span class="dachzeile">Newsletter</span>
+          <h1>Something went wrong</h1>
+          <p>Please try again in a few minutes.</p>
+          <button type="button" class="btn arrow" data-nochmal>Try again</button>
+        </section>
+      </div>
+    </div>
   </div>
 </main>
-<footer class="fuss">
-  <div class="fuss-innen">
-    <span>© neoteq ventures management GmbH</span>
-    <nav>
-      <a href="https://neoteq.de/en/imprint">Imprint</a>
-      <a href="https://neoteq.de/en/privacy-policy">Privacy policy</a>
-    </nav>
+<footer>
+  <div class="container">
+    <div class="col-span-12">
+      <div class="footer_navigation">
+        <ul>
+          <li><a href="https://auth.fundrbird.com/7dd2e6fe-0953-4e62-9725-ea4834524c69">Investor Login</a></li>
+          <li><a href="https://www.neoteq.de/en/investor-information">Investor information</a></li>
+          <li><a href="https://www.neoteq.de/en/privacy-policy">Privacy Policy</a></li>
+          <li><a href="https://www.neoteq.de/en/imprint">Imprint</a></li>
+        </ul>
+      </div>
+      <div class="footer_socialmedia">
+        <a href="https://x.com/neoteqvc"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/x_blue.svg" alt="X"></a>
+        <a href="https://www.instagram.com/neoteqvc/"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/instagram_blue.svg" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/company/neoteq-ventures/"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/linkedIn_blue.svg" alt="LinkedIn"></a>
+        <a href="https://www.tiktok.com/@neoteqvc"><img src="https://www.neoteq.de/typo3conf/ext/base/Resources/Public/Icons/tiktok_blue.svg" alt="TikTok"></a>
+      </div>
+    </div>
   </div>
 </footer>
 </body>

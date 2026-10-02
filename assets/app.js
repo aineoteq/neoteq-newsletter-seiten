@@ -15,6 +15,24 @@
     }
   };
 
+  // Menü wie auf neoteq.de: Knopf öffnet und schließt das Overlay, Escape schließt.
+  var menueKnopf = document.querySelector(".nav_trigger");
+  if (menueKnopf) {
+    var setzeMenue = function (offen) {
+      document.body.classList.toggle("nav_active", offen);
+      menueKnopf.setAttribute("aria-expanded", offen ? "true" : "false");
+    };
+    menueKnopf.addEventListener("click", function () {
+      setzeMenue(!document.body.classList.contains("nav_active"));
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.body.classList.contains("nav_active")) {
+        setzeMenue(false);
+        menueKnopf.focus();
+      }
+    });
+  }
+
   var main = document.querySelector("main[data-aktion]");
   if (!main) return;
 

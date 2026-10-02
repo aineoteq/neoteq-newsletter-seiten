@@ -22,11 +22,17 @@ Veröffentlicht über GitHub Pages aus `main`, Wurzelverzeichnis.
 
 ## Datenschutz
 
-- Keine Cookies, kein localStorage, kein Tracking, keine externen Ressourcen. Schrift (Poppins, SIL OFL) und Logo liegen im Repo.
-- Content-Security-Policy erlaubt nur Ressourcen von der eigenen Adresse.
+- Keine Cookies, kein localStorage, kein Tracking, kein Cookie-Banner, keine Drittanbieter.
+- Schrift, Icons und Favicon kommen direkt von www.neoteq.de (setzt dort keine Cookies). Das Logo liegt byte-gleich im Repo, siehe DESIGN.md.
+- Content-Security-Policy erlaubt nur die eigene Adresse und www.neoteq.de (Schrift, Bilder).
 - `referrer: no-referrer`, damit der Token beim Klick auf Impressum oder Datenschutz nicht an neoteq.de weitergegeben wird.
 - `noindex`, die Seiten sollen nicht in Suchmaschinen landen.
 - Hinweis: GitHub Pages (Phase 1) bzw. Cloudflare (Phase 2) protokollieren als Hoster IP-Adressen. Für den Livebetrieb gehört der Hoster in die Datenschutzerklärung.
+
+## Design
+
+Header, Menü, Footer, Typo und Abstände sind von neoteq.de übernommen. Werte, Quellen und Abweichungen: [DESIGN.md](DESIGN.md),
+Screenshots nebeneinander: [docs/vergleich/](docs/vergleich/).
 
 ## Texte ändern
 
