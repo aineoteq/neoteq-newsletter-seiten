@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Confirm subscription · neoteq</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/Poppins-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/app.js" defer></script>
+</head>
+<body>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="logo" href="https://neoteq.de/en/"><img src="../../assets/logo-weiss.svg" alt="neoteq – home" width="131" height="61"></a>
+    <a class="sprache" href="../bestaetigen/" hreflang="de" lang="de" data-sprache>Deutsch</a>
+  </div>
+</header>
+<main data-aktion="bestaetigen">
+  <div class="karte">
+    <section data-zustand="start" tabindex="-1">
+      <p class="dachzeile">Newsletter</p>
+      <h1>Please confirm your subscription</h1>
+      <p>One more click and you’ll receive the neoteq newsletter.</p>
+      <button type="button" class="btn" data-ausloesen data-laeuft="One moment …">Confirm subscription</button>
+      <noscript><p class="hinweis-fehler">This page needs JavaScript. Please enable it and reload the page.</p></noscript>
+      <p class="leise">Didn’t sign up? Just close this page. We won’t send you anything without your confirmation.</p>
+    </section>
+    <section class="zustand" data-zustand="erfolg" tabindex="-1" role="status" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>Thanks, you’re in</h1>
+      <p>Your subscription is confirmed. You can unsubscribe at any time using the link at the end of every issue.</p>
+      <a class="btn btn-zweit" href="https://neoteq.de/en/">Go to neoteq.de</a>
+    </section>
+    <section class="zustand" data-zustand="abgelaufen" tabindex="-1" role="alert" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>This link has expired</h1>
+      <p>Please sign up again. You’ll then receive a new email with a fresh confirmation link.</p>
+      <a class="btn btn-zweit" href="https://neoteq.de/en/">Go to neoteq.de</a>
+    </section>
+    <section class="zustand" data-zustand="ungueltig" tabindex="-1" role="alert" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>This link is incomplete</h1>
+      <p>Please open the link directly from the email. If that doesn’t help, copy the full address into your browser.</p>
+    </section>
+    <section class="zustand" data-zustand="fehler" tabindex="-1" role="alert" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>Something went wrong</h1>
+      <p>Please try again in a few minutes.</p>
+      <button type="button" class="btn" data-nochmal>Try again</button>
+    </section>
+  </div>
+</main>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <span>© neoteq ventures management GmbH</span>
+    <nav>
+      <a href="https://neoteq.de/en/imprint">Imprint</a>
+      <a href="https://neoteq.de/en/privacy-policy">Privacy policy</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Newsletter abmelden · neoteq</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/Poppins-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="logo" href="https://neoteq.de/de/"><img src="../assets/logo-weiss.svg" alt="neoteq – zur Startseite" width="131" height="61"></a>
+    <a class="sprache" href="../en/abmelden/" hreflang="en" lang="en" data-sprache>English</a>
+  </div>
+</header>
+<main data-aktion="abmelden">
+  <div class="karte">
+    <section data-zustand="start" tabindex="-1">
+      <p class="dachzeile">Newsletter</p>
+      <h1>Newsletter abmelden</h1>
+      <p>Schade, dass du gehst. Nach dem Klick bekommst du keinen neoteq-Newsletter mehr.</p>
+      <button type="button" class="btn" data-ausloesen data-laeuft="Einen Moment …">Abmelden</button>
+      <noscript><p class="hinweis-fehler">Für diese Seite brauchst du JavaScript. Bitte aktiviere es und lade die Seite neu.</p></noscript>
+
+    </section>
+    <section class="zustand" data-zustand="erfolg" tabindex="-1" role="status" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>Du bist abgemeldet</h1>
+      <p>Wir schicken dir keinen Newsletter mehr. War das ein Versehen? Du kannst dich jederzeit wieder anmelden.</p>
+      <a class="btn btn-zweit" href="https://neoteq.de/de/">Zu neoteq.de</a>
+    </section>
+    <section class="zustand" data-zustand="abgelaufen" tabindex="-1" role="alert" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>Dieser Link gilt nicht mehr</h1>
+      <p>Nutze bitte den Abmeldelink aus der neuesten Newsletter-Ausgabe.</p>
+      <a class="btn btn-zweit" href="https://neoteq.de/de/">Zu neoteq.de</a>
+    </section>
+    <section class="zustand" data-zustand="ungueltig" tabindex="-1" role="alert" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>Dieser Link ist unvollständig</h1>
+      <p>Öffne den Link bitte direkt aus der E-Mail. Falls das nicht hilft, kopiere die komplette Adresse in deinen Browser.</p>
+    </section>
+    <section class="zustand" data-zustand="fehler" tabindex="-1" role="alert" hidden>
+      <p class="dachzeile">Newsletter</p>
+      <h1>Das hat nicht geklappt</h1>
+      <p>Bitte versuche es in ein paar Minuten noch einmal.</p>
+      <button type="button" class="btn" data-nochmal>Noch einmal versuchen</button>
+    </section>
+  </div>
+</main>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <span>© neoteq ventures management GmbH</span>
+    <nav>
+      <a href="https://neoteq.de/de/impressum">Impressum</a>
+      <a href="https://neoteq.de/de/datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
