@@ -37,9 +37,9 @@ Gewicht 700 (Footer-Links) hat keine eigene Datei. Der Browser nimmt Black, wie 
 | Element | Desktop | Mobil (≤ 786 px) |
 |---|---|---|
 | Fließtext `body` | 36 px / 42 px, 500 | 21 px / 28 px |
-| Überschrift `h2` (Unterseiten) | 36 px / 33 px, 900, Versalien, −0,4 px | 20 px / 18 px, −0,2 px |
-| `h1` (nur Startseite) | 80 px / 72 px, 900, Versalien | 40 px / 36 px |
-| Dachzeile `.text-dachzeile` | 30 px / 45 px, 400, Versalien | 21 px / 31,5 px |
+| Seitenüberschrift `.h1` (Mission, Team, Teaser; bei uns `h1`) | 80 px / 72 px, 900, Versalien, −0,8 px | 40 px / 36 px, −0,4 px |
+| Zwischenüberschrift `h2` (Impressum) | 36 px / 33 px, 900, Versalien, −0,4 px | 20 px / 18 px, −0,2 px |
+| Dachzeile `.text-dachzeile` | 30 px / 45 px, 400, Versalien, −0,4 px | 21 px / 31,5 px, −0,2 px |
 | Kleintext `.text-body2` | 16 px / 24 px | 16 px / 24 px |
 | Button | 16 px / 24 px, 500, Versalien | Zeilenhöhe 1, zentriert |
 | Menüpunkte `.text-nav` | 60 px / 90 px, 900, Versalien | 40 px / 60 px |
@@ -53,10 +53,14 @@ Mobil gilt `hyphens: auto` für `main`.
   Mobil: `gap` 10 px, Innenabstand 22 px, `margin-bottom: 5rem`.
 - Header fest oben (`position: fixed`), Innenabstand 25 px 33 px (mobil 25 px 22 px), Höhe 110,5 px (mobil 92,8 px).
 - `main`: `margin-top: 200px` (mobil 92 px).
-- Textblock `.mask_text .bodytext`: `margin-top: 160px`, `padding-left: 33%`, also Text ab x = 499 px bei 1440 px Breite.
-  Bis 1200 px: `margin-top: 80px`, `padding-left: 0`.
-- Überschrift `margin-bottom: 25px` (≤ 1200 px: 22 px), Dachzeile `margin-bottom: 35px`.
-- Abstand Text → Button 33 px (mobil 28 px), aus `.mask_text_teaser`.
+- Seitenkopf `.mask_text` (z. B. /de/mission): Dachzeile direkt unter dem Header (y = 200 px, mobil 92 px), linksbündig ab x = 70 px
+  (mobil 22 px), über die volle Containerbreite. Abstand Dachzeile → Überschrift 25 px (mobil 22 px).
+- Langer Fließtext `.bodytext` (Impressum, Mission): `margin-top: 160px`, `padding-left: 33%`, also eingerückt ab x = 499 px.
+  **Für die Newsletter-Seiten nicht verwendet.** Das ist das Muster für lange Texte, nicht für kurze Seiten mit einem Button.
+- Block mit Aufruf `.mask_text_teaser` („GET IN TOUCH“ auf /de/mission): Dachzeile, `.h1`, Button, linksbündig.
+  Abstand zum Button 33 px (mobil 28 px).
+- **Newsletter-Seiten:** Seitenkopf wie /de/mission, danach wie im Teaser ein kurzer Satz im Fließtext (36/42 px, mobil 21/28 px), der Button
+  und ein Hinweis in `.text-body2` (16/24 px).
 
 ## Rundungen
 
@@ -112,6 +116,7 @@ Die Newsletter-Seiten nutzen fest Petrol/Türkis. Weiße Footer-Box gibt es mobi
 
 ## Vergleich
 
-Screenshots nebeneinander (links neoteq.de/de/impressum, rechts `/bestaetigen/`) in `docs/vergleich/`.
+Screenshots nebeneinander in `docs/vergleich/`: Inhalt gegen /de/mission, Menü gegen /de/impressum, jeweils rechts `/bestaetigen/`.
+Dachzeile und Überschrift liegen bei 1440 und 390 px auf denselben Koordinaten wie auf /de/mission, mit gleicher Größe und gleichen Abständen.
 Pixelvergleich der Header-Streifen: 0 abweichende Pixel bei 1440, 1100 und 390 px.
 Die Elementpositionen im geöffneten Menü und im Footer stimmen auf den Pixel.

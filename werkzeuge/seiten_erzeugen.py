@@ -201,7 +201,7 @@ VORLAGE = """<!doctype html>
 <main data-aktion="{aktion}">
   <div class="container">
     <div class="col-span-12">
-      <div class="bodytext">
+      <div class="inhalt">
         <section data-zustand="start" tabindex="-1">
           <span class="dachzeile">{dachzeile}</span>
           <h1>{h1}</h1>

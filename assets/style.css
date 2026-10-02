@@ -119,14 +119,13 @@ header .container .btn { padding: 10px 16px; }
 .nav_socialMediaIcons { display: flex; gap: 7px; }
 .nav_socialMediaIcons img { width: 36px; }
 
-/* Inhalt wie .mask_text / .bodytext auf den Unterseiten von neoteq.de */
+/* Inhalt wie der Kopf von /de/mission (.mask_text ohne .bodytext) und der Block
+   „GET IN TOUCH“ (.mask_text_teaser): Dachzeile, große Überschrift, Text, Button, linksbündig. */
 main { margin-top: 200px; }
-.bodytext { margin-top: 160px; padding-left: 33%; }
-.dachzeile { display: block; margin-bottom: 35px; font-size: 30px; font-weight: 400; line-height: 45px; text-transform: uppercase; }
-h1 { font-size: 36px; font-weight: 900; letter-spacing: -.4px; line-height: 33px; margin-bottom: 25px; text-transform: uppercase; }
-.bodytext p + p { margin-top: 42px; }
-.bodytext .btn { margin-top: 33px; }
-.bodytext .leise { margin-top: 33px; font-size: 16px; line-height: 24px; }
+.dachzeile { display: block; margin-bottom: 25px; font-size: 30px; font-weight: 400; letter-spacing: -.4px; line-height: 45px; text-transform: uppercase; }
+h1 { font-size: 80px; font-weight: 900; letter-spacing: -.8px; line-height: 72px; margin-bottom: 25px; text-transform: uppercase; overflow-wrap: break-word; }
+.inhalt p { display: block; margin-bottom: 33px; }
+.inhalt .leise { margin: 33px 0 0; font-size: 16px; line-height: 24px; }
 .zustand:focus { outline: none; }
 
 /* Footer, ohne den Newsletter-iFrame von neoteq.de (Drittanbieter) */
@@ -141,8 +140,6 @@ footer .col-span-12 { display: flex; align-items: center; justify-content: space
 .footer_socialmedia img { max-width: none; }  /* natürliche Größe der SVGs wie auf neoteq.de */
 
 @media (max-width: 1200px) {
-  h1 { margin-bottom: 22px; }
-  .bodytext { margin-top: 80px; padding-left: 0; }
   footer { margin: 0 20px; padding-bottom: 20px; }
 }
 
@@ -177,11 +174,10 @@ footer .col-span-12 { display: flex; align-items: center; justify-content: space
   .nav_socialMediaIcons { margin-top: 30px; }
 
   main { margin-top: 92px; hyphens: auto; }
-  h1 { font-size: 20px; letter-spacing: -.2px; line-height: 18px; }
-  .dachzeile { font-size: 21px; line-height: 31.5px; }
-  .bodytext p + p { margin-top: 28px; }
-  .bodytext .btn { margin-top: 28px; }
-  .bodytext .leise { margin-top: 28px; }
+  h1 { font-size: 40px; letter-spacing: -.4px; line-height: 36px; margin-bottom: 22px; }
+  .dachzeile { font-size: 21px; letter-spacing: -.2px; line-height: 31.5px; margin-bottom: 22px; }
+  .inhalt p { margin-bottom: 28px; }
+  .inhalt .leise { margin-top: 28px; }
 
   footer { margin: 0 20px; padding-bottom: 20px; }
   footer .container { margin-bottom: 0; }
